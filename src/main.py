@@ -51,4 +51,4 @@ if __name__ == "__main__":
 
     print query, "\n"
     for s in similar:
-        print s[0], s[1].original
+        print s[0], s[1].position_in_article, s[1].original

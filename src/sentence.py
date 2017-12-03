@@ -3,9 +3,10 @@ from similarity import get_similar_score
 
 
 class Sentence(object):
-    def __init__(self, sentence_string):
+    def __init__(self, sentence_string, index=0):
         self.original = sentence_string
         self.preprocessed = auto_preprocess_single(sentence_string)
+        self.position_in_article = index
 
     def get_similar_scores_to_self(self, sentences):
         """
@@ -61,4 +62,9 @@ class Sentence(object):
                 article += remove_non_ascii(line) + " "
                 article.strip()
 
-        return [Sentence(s) for s in chunk_article(article)]
+        out = []
+        chunks = chunk_article(article)
+        for i in range(len(chunks)):
+            out.append(Sentence(chunks[i], i))
+
+        return out
