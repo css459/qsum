@@ -61,25 +61,21 @@ def process_results(graph, vecs):
 def add_scores_to_sentences(sentences, scores):
     for sentence in sentences:
         # Adds the score to the object if it has one.
-        if sentence.token in scores:
-            sentence.score = scores[sentence.token]
+        if sentence in scores:
+            sentence.score = scores[sentence]
         else:
             sentence.score = 0
 
 
-def get_most_important_sentences(sentences):
-    word_count = 0
+def get_most_important_sentences(sentences, num_sentences):
+    sentence_count = 0
     selected_sentences = []
     # Loops until the word count is reached.
     for sentence in sentences:
-        words_in_sentence = len(sentence.text.split())
-
-        # Checks if the inclusion of the sentence gives a better approximation
-        # to the word parameter.
-        if abs(words - word_count - words_in_sentence) > abs(words - word_count):
+        if sentence_count >= num_sentences:
             return selected_sentences
 
         selected_sentences.append(sentence)
-        word_count += words_in_sentence
+        sentence_count += 1
 
     return selected_sentences

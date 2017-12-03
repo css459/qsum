@@ -114,8 +114,9 @@ class Graph(object):
         return self.edge_properties.setdefault(edge, {})
 
     def add_edge_attributes(self, edge, attrs):
-        for attr in attrs:
-            self.add_edge_attribute(edge, attr)
+        if attrs is not None:
+            for attr in attrs:
+                self.add_edge_attribute(edge, attr)
 
     def add_edge_attribute(self, edge, attr):
         self.edge_attr[edge] = self.edge_attributes(edge) + [attr]

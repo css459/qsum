@@ -7,6 +7,7 @@ class Sentence(object):
         self.original = sentence_string
         self.preprocessed = auto_preprocess_single(sentence_string)
         self.position_in_article = index
+        self.score = 0
 
     def get_similar_scores_to_self(self, sentences):
         """

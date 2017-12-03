@@ -1,14 +1,14 @@
 from graph import Graph
-
+from similarity import *
 
 def build_graph(list_sentences):
     """
     Create a graph without weights from a list of sentences
     """
     graph = Graph()
-    for line in list_sentences:
-        if not graph.has_node(line):
-            graph.add_node(line)
+    for sentence in list_sentences:
+        if not graph.has_node(sentence):
+            graph.add_node(sentence)
     return graph
 
 
@@ -18,7 +18,7 @@ def set_graph_edge_weights(graph):
 
             edge = (sentence_1, sentence_2)
             if sentence_1 != sentence_2 and not graph.has_edge(edge):
-                similarity = get_similarity(sentence_1, sentence_2)
+                similarity = get_similar_score(sentence_1.preprocessed, sentence_2.preprocessed)
                 if similarity != 0:
                     graph.add_edge(edge, similarity)
 
