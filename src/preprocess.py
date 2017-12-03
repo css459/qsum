@@ -1,9 +1,21 @@
+import re
+
 from nltk import wordpunct_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
-from nltk.tokenize.punkt import PunktSentenceTokenizer
+from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
+ABBREV_TYPES = ['dr', 'vs', 'mr', 'mrs', 'prof', 'inc']
 PUNCTUATION = ['.', ',', '"', "'", '?', '!', ':', ';', '(', ')', '[', ']', '{', '}']
+
+
+def remove_non_ascii(string):
+    """
+    Replaces all non-ascii elements in string with a single space
+    :param string: A string containing non-ascii characters
+    :return: A sanitized string containing only ascii characters
+    """
+    return re.sub(r'[^\x00-\x7F]+', ' ', string)
 
 
 def chunk_article(article):
@@ -14,11 +26,18 @@ def chunk_article(article):
     :return: A list of strings representing the sentences of the article
     """
 
-    s = PunktSentenceTokenizer.sentences_from_text(article, realign_boundaries=False)
+    # Add support to NOT falsely split a sentence at a title like dr or mr
+    p_params = PunktParameters()
+    p_params.abbrev_types = set(ABBREV_TYPES)
+    p = PunktSentenceTokenizer(p_params)
 
-    print s
+    sen = p.sentences_from_text(article, realign_boundaries=False)
 
-    return s
+    # Strip extra spaces
+    for s in sen:
+        s.strip()
+
+    return sen
 
 
 def remove_stopwords(sentence):
@@ -64,8 +83,6 @@ def stems_only(sentence, no_stop_words):
     for w in s:
         out.append(stemmer.stem(w))
 
-    print out
-
     return out
 
 
@@ -76,11 +93,10 @@ def auto_preprocess(article):
     :param article: A string representing the full text of an article
     :return: A 2D list of sentences, and stemmed words with stop words removed from sentences
     """
-    sentences = chunk_article(article)
+    sentences = chunk_article(remove_non_ascii(article))
 
+    out = []
     for s in sentences:
-        s = stems_only(s, no_stop_words=True)
+        out.append(stems_only(s, no_stop_words=True))
 
-    print sentences
-
-    return sentences
+    return out
