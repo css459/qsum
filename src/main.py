@@ -45,10 +45,8 @@ if __name__ == "__main__":
     query = "Mr. Trump's thoughts on the tax cut"
 
     q = Sentence(query)
-    s = Sentence.sentences_from_article_file("text/nytimes.txt")
-
-    similar = q.get_similar_scores_to_self(s)
+    s = Sentence.sentences_from_article_file("text/nytimes.txt", query)
 
     print query, "\n"
-    for s in similar:
-        print s[0], s[1].position_in_article, s[1].original
+    for sen in s:
+        print sen.norm_to_query, sen.position_in_article, sen.original
