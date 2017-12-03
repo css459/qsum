@@ -1,4 +1,5 @@
 # To Do List
+[x] Preprocessing procedures
 
 [x] Implement and test sentence similarity scoring
 

@@ -1,19 +1,9 @@
 from graphbuilder import *
 from importance import *
-from preprocess import *
-from similarity import *
+from sentence import Sentence
 
 
 # Preprocess
-def preprocess_from_file(file_name):
-    art = ""
-    with open(file_name, 'r') as a:
-        for line in a:
-            art += remove_non_ascii(line) + " "
-            art.strip()
-
-    return auto_preprocess(art)
-
 
 # Get similarity
 
@@ -53,7 +43,12 @@ def print_results(extracted_sentences, score):
 # Main function trigger
 if __name__ == "__main__":
     query = "Mr. Trump's thoughts on the tax cut"
-    sentences = preprocess_from_file("text/nytimes.txt")
 
-    processed_query = auto_preprocess_single(query)
-    get_similar_scores_to_query(processed_query, sentences)
+    q = Sentence(query)
+    s = Sentence.sentences_from_article_file("text/nytimes.txt")
+
+    similar = q.get_similar_scores_to_self(s)
+
+    print query, "\n"
+    for s in similar:
+        print s[0], s[1].original
