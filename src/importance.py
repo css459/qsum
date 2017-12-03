@@ -1,8 +1,9 @@
-from scipy.sparse import csr_matrix
-from scipy.linalg import eig
 from numpy import empty as empty_matrix
+from scipy.linalg import eig
+from scipy.sparse import csr_matrix
 
 CONVERGENCE_THRESHOLD = 0.0001
+
 
 def weighted_importance(graph, dampening=0.85):
     """
@@ -17,6 +18,7 @@ def weighted_importance(graph, dampening=0.85):
     pagerank_matrix = dampening * adj_matrix.todense() + (1 - dampening) * prb_matrix
     vals, vecs = eig(pagerank_matrix, left=True, right=False)
     return process_results(graph, vecs)
+
 
 def build_adjacency_matrix(graph):
     row = []
@@ -35,16 +37,18 @@ def build_adjacency_matrix(graph):
                 col.append(j)
                 data.append(edge_weight / neighbors_sum)
 
-    return csr_matrix((data,(row,col)), shape=(length,length))
+    return csr_matrix((data, (row, col)), shape=(length, length))
+
 
 def build_probability_matrix(graph):
     dimension = len(graph.nodes())
-    matrix = empty_matrix((dimension,dimension))
+    matrix = empty_matrix((dimension, dimension))
 
     probability = 1 / float(dimension)
     matrix.fill(probability)
 
     return matrix
+
 
 def process_results(graph, vecs):
     scores = {}
@@ -53,6 +57,7 @@ def process_results(graph, vecs):
 
     return scores
 
+
 def add_scores_to_sentences(sentences, scores):
     for sentence in sentences:
         # Adds the score to the object if it has one.
@@ -60,6 +65,7 @@ def add_scores_to_sentences(sentences, scores):
             sentence.score = scores[sentence.token]
         else:
             sentence.score = 0
+
 
 def get_most_important_sentences(sentences):
     word_count = 0

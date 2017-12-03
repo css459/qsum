@@ -1,5 +1,6 @@
 from graph import Graph
 
+
 def build_graph(list_sentences):
     """
     Create a graph without weights from a list of sentences
@@ -9,6 +10,7 @@ def build_graph(list_sentences):
         if not graph.has_node(line):
             graph.add_node(line)
     return graph
+
 
 def set_graph_edge_weights(graph):
     for sentence_1 in graph.nodes():
@@ -25,6 +27,7 @@ def set_graph_edge_weights(graph):
     if all(graph.edge_weight(edge) == 0 for edge in graph.edges()):
         create_random_graph(graph)
 
+
 def create_random_graph(graph):
     """
     Baseline random graph. This function will only be triggered when
@@ -40,6 +43,7 @@ def create_random_graph(graph):
             if graph.has_edge(edge):
                 graph.del_edge(edge)
             graph.add_edge(edge, 1)
+
 
 def remove_unreachable_nodes(graph):
     for node in graph.nodes():
