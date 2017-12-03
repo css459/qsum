@@ -1,8 +1,8 @@
 # To Do List
 
-[] Implement and test sentence similarity scoring
+[x] Implement and test sentence similarity scoring
 
-[] Implement and test sentence similarity scoring *with query term*
+[x] Implement and test sentence similarity scoring *with query term*
 
 [] Create a graph based on similarity scoring
 
@@ -20,7 +20,7 @@
 
 # Follow up tasks
 
-[] Allow support for detecting words in the query of similar root
+[x] Allow support for detecting words in the query of similar root
 
 * Ex: If the query contains the term `Economic` we should also be properly weighting
 the word `Economics` and vice versa
@@ -35,7 +35,7 @@ the word `Economics` and vice versa
 
 * `graph.py`: Graph data structure
 
-* `parse.py`: Parses text files into memory and gathers stop words, frequencies.
+* `preprocess.py`: Parses text files into memory and gathers stop words, frequencies.
 
 * `summarize.py`: Takes an input string of an article, and returns a summary
 
