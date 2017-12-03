@@ -28,13 +28,13 @@ def summarize(sentences, ratio=0.2, q=None):
         return []
 
     # Ranks the tokens using the importance algorithm. Returns dict of sentence -> score
-    importance_scores = weighted_importance(graph)
+    importance_scores = weighted_importance_random_traversal(graph)
     # Adds the importance scores to the sentence objects.
     add_scores_to_sentences(sentences, importance_scores)
     # Sorts the extracted sentences by apparition order in the original text.
     sentences.sort(key=lambda s: s.score, reverse=True)
 
-    important_sentences = get_most_important_sentences(sentences, 3)
+    important_sentences = get_most_important_sentences(sentences, 5)
 
     return important_sentences
 
@@ -46,6 +46,12 @@ if __name__ == "__main__":
     q = Sentence(query)
     s = Sentence.sentences_from_article_file("text/nytimes.txt", query)
 
-    print query, "\n"
-    for sen in s:
-        print sen.norm_to_query, sen.position_in_article, sen.original
+    summary = summarize(s, 0.2, query)
+    summary.sort(key=lambda s: s.position_in_article)
+    for sentence in summary:
+        print sentence.original, "\n[", sentence.score, "]"
+
+
+    #print query, "\n"
+    #for sen in s:
+    #    print sen.norm_to_query, sen.position_in_article, sen.original

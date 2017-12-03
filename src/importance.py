@@ -2,8 +2,29 @@ from numpy import empty as empty_matrix
 from scipy.linalg import eig
 from scipy.sparse import csr_matrix
 
-CONVERGENCE_THRESHOLD = 0.0001
+CONVERGENCE = 0.0001
 
+def weighted_importance_random_traversal(graph, dampening=0.85):
+    initial_value = 1.0 / len(graph.nodes())
+    scores = dict.fromkeys(graph.nodes(), initial_value)
+
+    for iteration in xrange(100):
+        convergence_achieved = 0
+        for i in graph.nodes():
+            rank = 1.0 - dampening
+            for j in graph.neighbors(i):
+                neighbors_sum = sum(graph.edge_weight((j, k)) * k.norm_to_query for k in graph.neighbors(j))
+                if neighbors_sum > 0:
+                    rank += dampening * scores[j] * graph.edge_weight((j, i)) * j.norm_to_query / neighbors_sum
+
+            if abs(scores[i] - rank) <= CONVERGENCE:
+                convergence_achieved += 1
+
+            scores[i] = rank
+
+        if convergence_achieved == len(graph.nodes()):
+            break
+    return scores
 
 def weighted_importance(graph, dampening=0.85):
     """
