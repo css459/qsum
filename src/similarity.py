@@ -1,5 +1,6 @@
 from math import log10
 
+
 def get_similar_score(a, b):
 
     # Split sentence A and B into words
@@ -25,6 +26,7 @@ def get_similar_score(a, b):
         return 0
 
     return commons / log_denom
+
 
 def get_query_score(a, query):
 
