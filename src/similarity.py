@@ -5,8 +5,8 @@ def get_common_words_count(arr1, arr2):
     """
     For two lists of strings, get the count intersect of
     common elements between them.
-    :param arr1: A preprocessed list of stings for sentence A
-    :param arr2: A preprocessed list of stings for sentence B
+    :param arr1: A preprocessed list of strings for sentence A
+    :param arr2: A preprocessed list of strings for sentence B
     :return: The count of similar elements
     """
     return len(list(set(arr1).intersection(arr2)))
@@ -21,8 +21,8 @@ def get_similar_score(a, b):
     10 of the sentence lengths. The similarity is not normalized
     and can be any floating point number over 0. Thus, the
     similarity score should only be used for *ordinal* purposes.
-    :param a: A preprocessed list of stings for sentence A
-    :param b: A preprocessed list of stings for sentence B
+    :param a: A preprocessed list of strings for sentence A
+    :param b: A preprocessed list of strings for sentence B
     :return: A score of similarity
     """
 
