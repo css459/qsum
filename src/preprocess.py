@@ -100,3 +100,12 @@ def auto_preprocess(article):
         out.append(stems_only(s, no_stop_words=True))
 
     return out
+
+
+def auto_preprocess_single(sentence):
+    """
+    Auto preprocess a single sentence
+    :param sentence: A string representing a sentence
+    :return: The preprocessed sentence
+    """
+    return auto_preprocess(sentence)[0]
