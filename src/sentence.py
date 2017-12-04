@@ -43,7 +43,10 @@ class Sentence(object):
 
         # Normalize all scores
         for i in range(len(out)):
-            norm = (out[i][0] - min_score) / (max_score - min_score)
+            if max_score - min_score == 0.0:
+                norm = 0.0
+            else:
+                norm = (out[i][0] - min_score) / (max_score - min_score)
             out[i] = (norm, out[i][1])
 
         # Return list sorted by score in reverse order (if sort is True)

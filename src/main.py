@@ -1,7 +1,5 @@
 from graphbuilder import *
 from importance import *
-from preprocess import *
-from similarity import *
 from sentence import Sentence
 
 
@@ -41,7 +39,7 @@ def summarize(sentences, ratio=0.2, q=None):
 
 # Main function trigger
 if __name__ == "__main__":
-    query = "Mr. Trump's thoughts on the tax cut"
+    query = "The highs and lows of a presidency rarely come in such quick succession"
 
     q = Sentence(query)
     s = Sentence.sentences_from_article_file("text/nytimes.txt", query)

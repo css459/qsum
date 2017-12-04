@@ -9,7 +9,9 @@ def get_common_words_count(arr1, arr2):
     :param arr2: A preprocessed list of strings for sentence B
     :return: The count of similar elements
     """
-    return len(list(set(arr1).intersection(arr2)))
+    l = list(set(arr1).intersection(arr2))
+    print l
+    return len(l)
 
 
 def get_similar_score(a, b):
@@ -75,7 +77,10 @@ def get_similar_scores_to_query(query, sentences):
 
     # Normalize all scores
     for i in range(len(out)):
-        norm = (out[i][0] - min_score) / (max_score - min_score)
+        if max_score - min_score == 0.0:
+            norm = 0.0
+        else:
+            norm = (out[i][0] - min_score) / (max_score - min_score)
         out[i] = (norm, out[i][1])
 
     out = sorted(out, key=lambda tup: tup[0], reverse=True)
