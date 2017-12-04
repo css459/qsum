@@ -4,6 +4,7 @@
 
 ## Requirements
 * `nltk` - `pip install nltk`
+* `scipy` - `pip install scipy`
 
 # System Design Pipeline
 
