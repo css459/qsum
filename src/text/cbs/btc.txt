@@ -1,0 +1,42 @@
+When Saxo Bank forecast last December that Bitcoin's price would surpass $2,000 in 2017, it may have seemed like a stretch given that the digital currency's value at the time was under $1,000. Now, with Bitcoin surging, the same analyst who made the earlier forecast has a new prediction: The price could soar to $100,000 over the next 10 years.
+
+While Bitcoin fans say such projections are within reason, skeptics abound, with Vanguard founder Jack Bogle this week urging investors to avoid the digital money "like the plague."
+
+    Bitcoin mining consumes more energy than 159 countries
+
+"Bubbles always pop," Jonathan A. Martin, a professor of finance at MIT's Sloan School of Management said by email. "And cryptocurrencies have value only because people believe they will have value in the future.  As soon as that belief starts to fade, it's over."  
+
+For now, that belief is acting like rocket fuel and sending Bitcoin's value into the stratosphere. The price topped $11,400 on Wednesday morning, an increase of more than 930 percent since the start of the year.  As the day progressed, prices fell again and as 3:17 p.m. New York Time they were at $9,669.79 after Coinbase, the largest Bitcoin exchange, experienced sporadic outages.
+
+Even so, Bitcoin's growth is impressive. Its market capitalization now exceeds $161 billion, nearly double the market value of iconic Wall Street firm Goldman Sachs (GS).
+
+By comparison, New Zealand's gross domestic product is $176 billion, while in mid-2010, or roughly two years Bitcoin was created, it was valued at 8 cents.
+Bitcoin $1 million?
+
+For fans of Bitcoin, such as David Mondrus, the CEO of Trive, which rewards users who find fake news on the Internet, the case for the cryptocurrency is a largely matter of supply and demand. And while the former is strictly controlled, the latter is growing by leaps and bounds, driving up the currency's value.
+
+"Do you think that the US government will ever stop printing money?" he said. "There are only 21 million Bitcoins that can possibly be in existence -- 16 million of them already exist."
+
+Bitcoin also has many attributes that ordinary money lacks, Mondrus said. For instance, Bitcoin is divisible up to 8 decimal points, making it easier for users to transact using fractions of cryptocurrency. And Bitcoin, unlike regular currencies, isn't subject to the control of central banks, another plus in the eyes of its fans.
+
+These characteristics are spurring enormous investor interest, if only to cash in on the short-term trading opportunities. According to Axios, more than 100 hedge funds specializing in cryptocurrencies have launched this year.
+bitcoin-2017.png
+
+Speaking on CNBC earlier this week, noted hedge fund manager Michael Novogratz predicted that Bitcoin could "easily" hit $40,000 by the end of 2018. Arthur Hayes, CEO of the BitMex cryptocurrency exchanges, sees Bitcoin prices at $50,000 during that same time period, telling Bloomberg News that the cryptocurrency's meteoric rise is a "transformational" experience that happens once every hundred years.
+
+Mondrus sees even better times ahead for Bitcoin -- he expects its value to hit $1 million in about a decade as fewer coins are electronically created, or "mined."
+
+"When that mining stops or when it slows down dramatically, that's when the value really increases because there is no more supply to be created," he said in an interview.
+Pricing desire
+
+Despite Bitcoin's meteoric rise, it almost goes without saying that any investor thinking of jumping into the market need to be cautious. Stephen Gandel of Bloomberg Gadfly notes that, when measured by valuation, Bitcoin is four times more expensive than dot-com stocks were at the height of internet bubble in the 1990s.
+
+Indeed, even fans of the cryptocurrency say the volatile market may be due for a "correction."
+
+"The current value of Bitcoin is, in my opinion, a reflection of the desire for people to be part of cryptocurrency economy, not of the actual, real value of Bitcoin," said Austin Kimm, co-founder of the cryptobank Criterium.
+
+In Kimm's view, large investors are "jumping onto a bandwagon that they know will stop at some point, but are probably relying on the fact that every time there has been a minor crash, the next peak has been higher than the last."
+
+Perhaps the biggest strike against Bitcoin from an investment perspective is its volatility, with prices sometimes fluctuating widely for no apparent reason. Next month's planned launch of Bitcoin futures by CME Group could help stabilize prices, though that could take time, said Robin Bloor, a senior executive with software provider Algebraix Data. Others, including Nasdaq, are reportedly following CME's lead.
+
+"That adjustment period could prove to be volatile if the judgment of the market is that Bitcoin is currently highly overvalued or highly undervalued," he said by email.
