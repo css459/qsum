@@ -2,14 +2,13 @@ from graphbuilder import *
 from importance import *
 from sentence import Sentence
 
+#
+# Constants
+#
 
-# Preprocess
+USE_QUERY = True
+NUMBER_OF_SENTENCE_FOR_SUMMARY = 5
 
-# Get similarity
-
-# Graph building
-
-# Graph traversal
 
 # Print summary
 def summarize(sentences, ratio=0.2, q=None):
@@ -18,7 +17,7 @@ def summarize(sentences, ratio=0.2, q=None):
     set_graph_edge_weights(graph)
     remove_unreachable_nodes(graph)
 
-    #for sentence in graph.nodes():
+    # for sentence in graph.nodes():
     #    print sentence.original
 
     # If it is an empty graph, return an empty array
@@ -48,8 +47,3 @@ if __name__ == "__main__":
     summary.sort(key=lambda s: s.position_in_article)
     for sentence in summary:
         print sentence.original, "\n[", sentence.score, "]"
-
-
-    #print query, "\n"
-    #for sen in s:
-    #    print sen.norm_to_query, sen.position_in_article, sen.original

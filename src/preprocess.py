@@ -56,10 +56,8 @@ def remove_stopwords(sentence):
     # If sentence is something else, return None
     if isinstance(sentence, str):
         return [x.lower() for x in wordpunct_tokenize(sentence) if x.lower() not in stops]
-
     elif isinstance(sentence, list):
         return [x.lower() for x in sentence if x.lower() not in stops]
-
     else:
         return
 

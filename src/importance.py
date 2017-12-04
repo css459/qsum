@@ -4,6 +4,7 @@ from scipy.sparse import csr_matrix
 
 CONVERGENCE = 0.0001
 
+
 def weighted_importance_random_traversal(graph, dampening=0.85):
     initial_value = 1.0 / len(graph.nodes())
     scores = dict.fromkeys(graph.nodes(), initial_value)
@@ -25,6 +26,7 @@ def weighted_importance_random_traversal(graph, dampening=0.85):
         if convergence_achieved == len(graph.nodes()):
             break
     return scores
+
 
 def weighted_importance(graph, dampening=0.85):
     """

@@ -9,9 +9,7 @@ def get_common_words_count(arr1, arr2):
     :param arr2: A preprocessed list of strings for sentence B
     :return: The count of similar elements
     """
-    l = list(set(arr1).intersection(arr2))
-    print l
-    return len(l)
+    return len(list(set(arr1).intersection(arr2)))
 
 
 def get_similar_score(a, b):
