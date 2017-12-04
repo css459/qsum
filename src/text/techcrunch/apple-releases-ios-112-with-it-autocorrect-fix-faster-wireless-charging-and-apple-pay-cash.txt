@@ -1,0 +1,15 @@
+Apple released an iOS update in the middle of the night (Cupertino time). iOS 11.2 brings Apple Pay Cash, but the feature is not live yet. The company still needs to flip a switch on its servers to enable it.
+
+Today’s update also enables support for faster 7.5W Qi wireless charging. If you have an iPhone 8 or an iPhone X as well as a wireless charger that supports 7.5W or more, your phone will now charge more quickly as Apple first limited wireless charging to 5W.
+
+Some users have had some issues with the autocorrect feature. The default iOS keyboard would change ‘it’ into ‘I.T’ for no apparent reason. iOS 11.2 should fix that too.
+
+In iOS 11, if you tap on the Wi-Fi or Bluetooth icons in Control Center, iOS doesn’t disable Wi-Fi or Bluetooth. Instead, your phone disconnects itself from Wi-Fi networks and Bluetooth accessories until the next day at 5 AM (or you restart your device, or you go to a new place for Wi-Fi).
+
+Apple doesn’t disable those features so that you can connect your Apple Watch or Apple Pencil, enable Personal Hotspot from another device and use Wi-Fi for more accurate location features. With iOS 11.2, the icons are no longer greyed out. You’ll now see white icons to indicate that Wi-Fi and Bluetooth still work, you’re just not connected to any network or accessory.
+
+In smaller news, iOS 11.2 brings a couple of revamped emojis, new wallpapers, a new indicator at the top right of the lock screen to help you find Control Center and better Wi-Fi and Bluetooth indications.
+
+Releasing iOS 11.2 on a Friday night is a bit odd, but that might be because some iPhones keep rebooting themselves because of a time bug. After your device’s clock passes 12:15 AM on December 2nd, 2017, apps with local notifications crash your phone (workout or meditation apps for instance). Apple may have rushed iOS 11.2 to fix this bug. You can probably expect a macOS, tvOS and watchOS update next week.
+
+So you should update your phone when you get a minute before you encounter this weird clock crash. Head over to the Settings app, then hit General, then Software Update.

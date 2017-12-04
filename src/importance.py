@@ -4,7 +4,6 @@ from scipy.sparse import csr_matrix
 
 CONVERGENCE = 0.0001
 
-
 def weighted_importance_random_traversal(graph, dampening=0.85):
     initial_value = 1.0 / len(graph.nodes())
     scores = dict.fromkeys(graph.nodes(), initial_value)
@@ -14,9 +13,9 @@ def weighted_importance_random_traversal(graph, dampening=0.85):
         for i in graph.nodes():
             rank = 1.0 - dampening
             for j in graph.neighbors(i):
-                neighbors_sum = sum(graph.edge_weight((j, k)) * k.norm_to_query for k in graph.neighbors(j))
+                neighbors_sum = sum(graph.edge_weight((j, k)) for k in graph.neighbors(j))
                 if neighbors_sum > 0:
-                    rank += dampening * scores[j] * graph.edge_weight((j, i)) * j.norm_to_query / neighbors_sum
+                    rank += dampening * scores[j] * graph.edge_weight((j, i)) / neighbors_sum
 
             if abs(scores[i] - rank) <= CONVERGENCE:
                 convergence_achieved += 1
@@ -27,23 +26,21 @@ def weighted_importance_random_traversal(graph, dampening=0.85):
             break
     return scores
 
-
-def weighted_importance(graph, dampening=0.85):
+def weighted_importance(graph, dampening=0.85, query=True):
     """
     Calculate the weighted importance for the graph based on adjacency and probability matrices
     The result should be a selection of sentences that are the most important
 
     Default dampening value is 0.85 to weed out unimportant sentences.
     """
-    adj_matrix = build_adjacency_matrix(graph)
+    adj_matrix = build_adjacency_matrix(graph, query)
     prb_matrix = build_probability_matrix(graph)
 
     pagerank_matrix = dampening * adj_matrix.todense() + (1 - dampening) * prb_matrix
     vals, vecs = eig(pagerank_matrix, left=True, right=False)
     return process_results(graph, vecs)
 
-
-def build_adjacency_matrix(graph):
+def build_adjacency_matrix(graph, query):
     row = []
     col = []
     data = []
@@ -52,13 +49,22 @@ def build_adjacency_matrix(graph):
 
     for i in xrange(length):
         current_node = nodes[i]
-        neighbors_sum = sum(graph.edge_weight((current_node, neighbor)) for neighbor in graph.neighbors(current_node))
-        for j in xrange(length):
-            edge_weight = float(graph.edge_weight((current_node, nodes[j])))
-            if i != j and edge_weight != 0:
-                row.append(i)
-                col.append(j)
-                data.append(edge_weight / neighbors_sum)
+        if query:
+            neighbors_sum = sum(graph.edge_weight((current_node, neighbor)) * neighbor.norm_to_query for neighbor in graph.neighbors(current_node))
+            for j in xrange(length):
+                edge_weight = float(graph.edge_weight((current_node, nodes[j])) * nodes[j].norm_to_query)
+                if i != j and edge_weight != 0:
+                    row.append(i)
+                    col.append(j)
+                    data.append(edge_weight / neighbors_sum)
+        else:
+            neighbors_sum = sum(graph.edge_weight((current_node, neighbor)) for neighbor in graph.neighbors(current_node))
+            for j in xrange(length):
+                edge_weight = float(graph.edge_weight((current_node, nodes[j])))
+                if i != j and edge_weight != 0:
+                    row.append(i)
+                    col.append(j)
+                    data.append(edge_weight / neighbors_sum)
 
     return csr_matrix((data, (row, col)), shape=(length, length))
 

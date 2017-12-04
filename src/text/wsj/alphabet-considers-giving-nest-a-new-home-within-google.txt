@@ -1,0 +1,27 @@
+Google is considering folding home-automation unit Nest Labs into its hardware team, according to people familiar with the talks, reversing a major element of Google’s split two years ago into various businesses under holding company Alphabet Inc.
+
+Nest was a pioneer in internet-connected home devices such as thermostats and home security cameras. But Amazon.com Inc. recently launched a home-security device that competes with Nest.
+
+Making Nest and its 1,000 employees part of Google would mark a retrenchment of Alphabet’s strategy to separate its core Google internet business from a number of other units, such as its research lab and life-sciences firm. When Alphabet was formed in August 2015, Nest was the model “other bet,” with its own headquarters, hiring process and perks—even its own branded bikes for employees.
+
+At the time, CEO Larry Page said in a public letter that “the whole point is that Alphabet companies should have independence and develop their own brands.”
+
+Yet former Nest employees said the separation of Nest’s and Google’s hardware businesses has often made little sense, given the overlap in areas such as manufacturing and retail distribution. At one point, each was working on a similar software product—with the same name, Weave.
+
+“The only surprising thing to me is that it’s taken this long,” one former Nest manager said about a potential integration. “If you think about it from a sales and marketing perspective, we are calling the same retailers.”
+
+Pulling Nest closer would allow Google to more tightly integrate its services with Nest products as they take on Amazon in the home-device market. The Google Home smart speaker trails Amazon’s Echo system.
+
+Nest’s internet-connected thermostats, smoke detectors and security cameras work with both Google’s and Amazon’s virtual assistants.
+
+Google bought Nest for $3.2 billion in 2014, an acquisition second in size only to its $12.5 billion purchase of Motorola in 2012. Nest had become a hot startup in the nascent Internet of Things market by building slick, internet-connected versions of overlooked home devices like thermostats.
+
+But the company has since been slow to release new products and last year lost its high-profile co-founder and CEO, Tony Fadell, a former Apple Inc. executive. Nest for years tried to develop a platform for internet-connected devices, but recently has been upstaged by talking speakers with embedded virtual assistants—mainly the Amazon Echo and Google Home—which have become the hubs for connected homes.
+
+Alphabet last year moved several dozen Nest engineers working on Weave over to Google, though many have since returned, a person familiar with the matter said. It also combined the two companies’ supply-chain teams last year, moving about 100 Nest employees to Google. Former Nest employees said they also collaborated more closely with their Google counterparts over the past year.
+
+Still, Nest has remained independent, with its own legal, marketing and public-relations teams. Nest ads typically don’t mention its Google connection. Nest even still uses Amazon’s cloud services, though it is shifting to Google’s.
+
+Nest’s focus is more on energy and security, but Forrester analyst Frank Gillett said an integration with Google could jump-start its business.
+
+“The Nest team started fast, got acquired and then got distracted by leadership problems and for whatever reason has had a not-so-exciting road map the past couple of years,” he said. “If nothing else, (an integration) has the potential to get that team jacked up and cranking again.”
