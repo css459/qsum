@@ -15,7 +15,7 @@ NUMBER_OF_SENTENCE_FOR_SUMMARY = 3
 # Print summary
 def summarize(sentences, use_query=True, ratio=0.2):
     # Creates the graph and calculates the similarity coefficient for every pair of nodes.
-    graph = build_graph([sentence for sentence in sentences])
+    graph = build_graph([sn for sn in sentences])
     set_graph_edge_weights(graph)
     remove_unreachable_nodes(graph)
 
@@ -60,4 +60,5 @@ if __name__ == "__main__":
             summary = summarize(s)
             summary.sort(key=lambda s: s.position_in_article)
             for sentence in summary:
-                print sentence.original, "\n[", sentence.score, "]"
+                if sentence.score >= SIMILARITY_CUTOFF:
+                    print sentence.original, "\n[", sentence.score, "]"
