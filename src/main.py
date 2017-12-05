@@ -1,12 +1,14 @@
+import sys
+
 from graphbuilder import *
 from importance import *
 from sentence import Sentence
-import sys
 
 #
 # Constants
 #
 
+SIMILARITY_CUTOFF = 0.5
 NUMBER_OF_SENTENCE_FOR_SUMMARY = 3
 
 

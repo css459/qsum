@@ -1,5 +1,7 @@
 from math import log10
 
+from preprocess import remove_stopwords
+
 
 def get_common_words_count(arr1, arr2):
     """
@@ -10,6 +12,35 @@ def get_common_words_count(arr1, arr2):
     :return: The count of similar elements
     """
     return len(list(set(arr1).intersection(arr2)))
+
+
+def get_raw_similar_score(a, b):
+    """
+    Computes the raw similarity score without preprocessing a, b
+    :param a: A preprocessed list of strings for sentence A
+    :param b: A preprocessed list of strings for sentence B
+    :return: A score of similarity
+    """
+
+    a_nostop = remove_stopwords(a)
+    b_nostop = remove_stopwords(b)
+    commons = get_common_words_count(a_nostop, b_nostop)
+
+    # Compute the amount of common words, divided by the log
+    # the length of sentence 1 plus the length of sentence 2.
+    # This means that higher similarity weights will be given
+    # to longer sentences up to the asymptote of log10
+
+    if len(a) > 0 and len(b) > 0:
+        log_denom = log10(len(a) * len(b))
+    else:
+        return 0
+
+    # Avoid division by zero
+    if log_denom == 0:
+        return 0
+
+    return commons / log_denom
 
 
 def get_similar_score(a, b):
@@ -43,7 +74,7 @@ def get_similar_score(a, b):
     if log_denom == 0:
         return 0
 
-    return commons / log_denom
+    return (commons / log_denom) * get_raw_similar_score(a, b)  # NEW: Multiply by raw score
 
 
 def get_similar_scores_to_query(query, sentences):
