@@ -34,7 +34,10 @@ def get_similar_score(a, b):
     # This means that higher similarity weights will be given
     # to longer sentences up to the asymptote of log10
 
-    log_denom = log10(len(a) * len(b))
+    if len(a) > 0 and len(b) > 0:
+        log_denom = log10(len(a) * len(b))
+    else:
+        return 0
 
     # Avoid division by zero
     if log_denom == 0:

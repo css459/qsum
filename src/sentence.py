@@ -56,7 +56,7 @@ class Sentence(object):
             return out
 
     @staticmethod
-    def sentences_from_article_file(file_path, query):
+    def sentences_from_article_file(file_path, query=None):
         """
         From a file containing an article, will create a set of Sentence objects
         for every sentence in the article
@@ -78,8 +78,9 @@ class Sentence(object):
             out.append(Sentence(chunks[i], i))
 
         # Assign query similarity normals (not sorted and index-aligned with 'out')
-        norms = Sentence(query).get_similar_scores_to_self(out, sort=False)
-        for i in range(len(out)):
-            out[i].norm_to_query = norms[i][0]
+        if query is not None:
+            norms = Sentence(query).get_similar_scores_to_self(out, sort=False)
+            for i in range(len(out)):
+                out[i].norm_to_query = norms[i][0]
 
         return out

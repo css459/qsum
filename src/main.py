@@ -43,10 +43,7 @@ if __name__ == "__main__":
         print "You must set a article path as your first argument"
     else:
         if len(sys.argv) == 2:
-            query = ""
-
-            q = Sentence(query)
-            s = Sentence.sentences_from_article_file(sys.argv[1], query)
+            s = Sentence.sentences_from_article_file(sys.argv[1])
 
             summary = summarize(s, use_query=False)
             summary.sort(key=lambda s: s.position_in_article)
